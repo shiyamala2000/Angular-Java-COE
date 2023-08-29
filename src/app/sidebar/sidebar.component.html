@@ -1,0 +1,104 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!--Poppins  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="page-wrapper chiller-theme toggled" [class.toggled]="isToggled">
+        <a id="show-sidebar" class="btn btn-sm btn-dark" href="#" (click)="showSidebar()">
+            <i class="fas fa-bars"></i> <!-- 3 line icon-->
+        </a>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <img class="logo" src="assets/images/kgisl-logo.png" />
+                    <div id="close-sidebar" class="btn btn-sm btn-dark" href="#" (click)="closeSidebar()">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul>
+                        <li>
+                            <a routerLink="/home" class="nav-link text-white pb-1">
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span class="menuName">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/microserviceView" class="nav-link text-white pb-1">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                                <!-- <i class="fa-regular fa-file"aria-hidden="true"></i> -->
+                                <span class="menuName">Microservices</span>
+                            </a>
+                        </li>
+                        <li class="sidebar">
+                            <a routerLink="/microserviceCamundaView" class="nav-link text-white">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                                <!-- <i class="fa-regular fa-file"aria-hidden="true"></i> -->
+                                <span class="menuName">Spring Boot-Microservices-Camunda</span>
+                            </a>
+                        </li>
+                        <li class="sidebar">
+                            <a href="#" class="nav-link text-white pb-1">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                                <span class="menuName">Spring Boot-Docker-Kubernetes</span>
+                            </a>
+                        <li class="sidebar">
+                            <a href="#" class="nav-link text-white pb-1">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                                <span class="menuName">Oracle Function Execution with JPA</span>
+                            </a>
+                        </li>
+                        <li class="sidebar">
+                            <a href="#" class="nav-link text-white pb-1">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                                <span class="menuName">Oracle Function Execution with JPA</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="page-content">
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+                <div class="shouldShowContent" *ngIf="shouldShowContent()">
+                    <!-- <h2>Welcome</h2> -->
+                    <!-- navbar -->
+                    <nav class="navbar navbar-expand-md navbar-light bg-light" style="padding-right: 1rem">
+                        <span class="p-0 mx-auto" >
+                            <p class="header-team"><b>KGiSL - Java COE</b></p>
+                        </span>
+                    </nav>
+                    <div class="page-wrap">
+                        <div class="bottom section-padding">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <div class="copyright">
+                                            <p> Let us help you study your requirement by emailing us the tech stack in
+                                                the
+                                                below link</p>
+                                            <a href="mailto:Java_COE_Team@kgisl.com" class="transition">Team JavaCOE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
